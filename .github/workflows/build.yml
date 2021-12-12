@@ -21,7 +21,7 @@ jobs:
           node-version: '16'
       - run: yarn install
       - run: yarn build
-                
+
       - name: Compile CSS and Javascript
         run: |
           npm install
@@ -34,7 +34,7 @@ jobs:
 
       - name: Composer install
         run: |
-        composer install --no-dev --no-interaction --prefer-dist
+          composer install --no-dev --no-interaction --prefer-dist
 
       - name: 'Write config'
         run: |
