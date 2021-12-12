@@ -4,6 +4,8 @@ namespace App\Models;
 
 
 use Carbon\Carbon;
+use Aws\S3\Exception\S3Exception;
+use Exception;
 use DB;
 class Oracle
 {
