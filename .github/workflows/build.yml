@@ -2,12 +2,7 @@ name: Laravel 8
 on:
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
-  schedule:
-    - cron: '7 5 * * *'
+      - '*'
 
 jobs:
   test:
