@@ -49,8 +49,6 @@ jobs:
 
       - name: Migrate Test Database
         run: php artisan migrate --env=testing --seed --force
-        env:
-          DB_PORT: 3306
 
       - name: 'Login to Dockerhub'
         uses: docker/login-action@v1
