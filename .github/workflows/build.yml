@@ -47,8 +47,8 @@ jobs:
       - name: Copy Env File
         run: cp .env.testing .env
 
-      - name: Migrate Test Database
-        run: php artisan migrate --env=testing --seed --force
+      # - name: Migrate Test Database
+      #   run: php artisan migrate --env=testing --seed --force
 
       - name: 'Login to Dockerhub'
         uses: docker/login-action@v1
