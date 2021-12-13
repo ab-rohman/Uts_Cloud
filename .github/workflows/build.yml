@@ -38,7 +38,7 @@ jobs:
           extensions: mbstring, ctype, fileinfo, openssl, PDO, bcmath, json, tokenizer, xml
 
       - name: Start mysql service
-        run: sudo /etc/init.d/mysql start
+        run: sudo service mysql start
 
       - name: Composer install
         run: |
