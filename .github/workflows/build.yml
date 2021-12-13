@@ -12,7 +12,7 @@ jobs:
         image: mysql:5.7
         env:
           MYSQL_ROOT_PASSWORD: '@Admin123'
-          MYSQL_DATABASE: '10.0.0.111'
+          MYSQL_DATABASE: 'quiz2_abdul'
           MYSQL_USER: 'admin'
           MYSQL_PASSWORD: '@Admin123'
         ports:
