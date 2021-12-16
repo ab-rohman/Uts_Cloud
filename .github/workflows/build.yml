@@ -1,23 +1,3 @@
-      # - name: 'Setup nodejs'
-      #   uses: actions/setup-node@v2
-      #   with:
-      #     node-version: '16'
-      # - run: yarn install
-      # - run: yarn build
-
-      # - name: Compile CSS and Javascript
-      #   run: |
-      #     npm install
-      #     npm run prod
-      # - name: Configure PHP 8.0
-      #   uses: shivammathur/setup-php@master
-      #   with:
-      #     php-version: 8.0
-      #     extensions: mbstring, ctype, fileinfo, openssl, PDO, bcmath, json, tokenizer, xml
-
-      # - name: Composer install
-      #   run: |
-      #     composer install --no-dev --no-interaction --prefer-dist
 name: laravel-cicd
 
 on:
@@ -35,13 +15,6 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@v2
 
-      # - name: 'Setup nodejs'
-      #   uses: actions/setup-node@v2
-      #   with:
-      #     node-version: '16'
-
-      # - run: yarn install
-      # - run: yarn build
       - name: Compile CSS and Javascript
         run: |
           npm install
@@ -93,7 +66,7 @@ jobs:
             oci compute instance list \
             --lifecycle-state RUNNING \
             --compartment-id ${{secrets.VM_COMPARTMENT_OCID}} \
-            --display-name cicd-demo \
+            --display-name quiz2 \
             --query "data [0].id" \
             --raw-output \
             )" >> $GITHUB_ENV
@@ -107,7 +80,7 @@ jobs:
             --shape ${{secrets.VM_SHAPE}} \
             --shape-config '{"memoryInGBs": 1, "ocpus": 1}' \
             --assign-public-ip true \
-            --display-name cicd-demo \
+            --display-name quiz2 \
             --image-id ${{secrets.VM_CUSTOM_IMAGE_OCID}} \
             --ssh-authorized-keys-file /home/runner/.oci/oci_api_key_public.pem \
             --subnet-id ${{secrets.VM_SUBNET_OCID}} \
